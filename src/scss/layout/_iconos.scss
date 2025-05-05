@@ -1,0 +1,20 @@
+//En dispositivo movil se ve bien pero no en pantalla grande se adapta mixins 
+//para que a partir de tablets se coloquen iconos en fila - - -
+
+@include tablet {
+    .iconos-nosotros{
+        @include grid (3, 2rem) //3 columnas en fila con separacion de 2 rem 
+    }
+}
+
+
+//centrados, tamaño de imagen y mayusculas en texto 
+.icono {
+    text-align: center;
+    img{
+        height: 10rem;
+    }
+    h3{
+        text-transform: uppercase;
+    }
+}

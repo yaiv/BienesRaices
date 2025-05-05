@@ -14,7 +14,8 @@
 
     &.inicio {
         background-position: center center;
-        background-size: cover; //se rome todo el contenido
+        background-size: cover; //se toma todo el contenido
+
         @include tablet{
             min-height: 70rem;
         }
