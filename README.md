@@ -31,7 +31,7 @@ Baja las dependencias de json
 Instala la configuracion de Gulp 
 
 📝 Autor
-Desarrollado por [Yair Guerra (yaiv)].
+Desarrollado por Yair Guerra (yaiv).
 
 
 
