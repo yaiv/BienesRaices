@@ -61,6 +61,13 @@ function watchArchivos() {
     watch(paths.imagenes, versionWebp);
 }
 
+function cleanCache(done) {
+    return cache.clearAll(done);
+}
+
+exports.cleanCache = cleanCache;
+
+
 exports.css = css;
 exports.watchArchivos = watchArchivos;
 exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 

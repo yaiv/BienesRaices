@@ -35,6 +35,29 @@ function eventListeners(){
 
 //Se genera funcion con toggle 
 function darkMode (){
+
+    //Preferencia de modo se visualiza en consola mediante 
+    //window.matchMedia('(prefers-color-scheme: dark)');
+
+    const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    //console.log(prefiereDarkMode.matches);
+
+    if(prefiereDarkMode){
+        document.body.classList.add('dark-mode');
+    }else{
+        document.body.classList.remove('dark-mode');
+    }
+    //Cuando se presente prefiereDarkMode se va a ejecutar el sig codigo 
+    //Es decir desde las preferencias ya del S.O.
+    prefiereDarkMode.addEventListener('change', function(){
+        if(prefiereDarkMode){
+            document.body.classList.add('dark-mode');
+        }else{
+            document.body.classList.remove('dark-mode');
+        }
+    })
+
+
     const btnDarkMode = document.querySelector ('.dark-mode-boton'); //Se eligue elemento del html 
     btnDarkMode.addEventListener('click', function() { //Cuando se de click en btnDarkMode se ejecuta la funcion 
         document.body.classList.toggle('dark-mode'); //toggle va a crear en el body la clase 'dark-mode' en caso de que ya se cuente con ella la remueve 
