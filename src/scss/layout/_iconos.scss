@@ -1,9 +1,13 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
 //En dispositivo movil se ve bien pero no en pantalla grande se adapta mixins 
 //para que a partir de tablets se coloquen iconos en fila - - -
 
-@include tablet {
+@include m.tablet {
     .iconos-nosotros{
-        @include grid (3, 2rem) //3 columnas en fila con separacion de 2 rem 
+        @include m.grid (3, 2rem) //3 columnas en fila con separacion de 2 rem 
     }
 }
 

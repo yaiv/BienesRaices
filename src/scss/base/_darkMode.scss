@@ -1,0 +1,6 @@
+@use 'base/variables' as v;
+@use 'sass:color';
+
+.dark-mode{
+    background-color: color.adjust(v.$grisOscuro, $lightness: 10%);
+}

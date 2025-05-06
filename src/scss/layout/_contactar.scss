@@ -1,3 +1,5 @@
+@use 'base/variables' as v;
+
 .no-webp .imagen-contacto {
     background-image: url('../img/encuentra.jpg');
 }
@@ -9,7 +11,7 @@
 .imagen-contacto {
     background-position: center center;
     background-size: cover;
-    padding: $separacion * 2 0;
+    padding: v.$separacion * 2 0;
     //Se acomoda contenido en centro mediante flex
     display: flex;
     flex-direction: column;
@@ -17,11 +19,11 @@
 
     h2{
         font-size: 4rem;
-        font-weight: $black;
-        color: $blanco;
+        font-weight: v.$black;
+        color: v.$blanco;
     }
     p{
         font-size: 1.8rem;
-        color: $blanco;
+        color: v.$blanco;
     }
 }

@@ -1,3 +1,6 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
 .no-webp .inicio {
     background-image: url(../img/header.jpg);
 }
@@ -7,7 +10,7 @@
 }
 
 .header {
-    background-color: $grisOscuro;
+    background-color: v.$grisOscuro;
     padding: 1rem 0 3rem 0; //va como reloj empieza de arriba a la derecha
 
     //se hace referencia a inicio de header
@@ -16,12 +19,12 @@
         background-position: center center;
         background-size: cover; //se toma todo el contenido
 
-        @include tablet{
+        @include m.tablet{
             min-height: 70rem;
         }
         //Se integra en inicio para que en las demas secciones se tomen el mismo estilo de header ya que solo se modifica estilo de inicio 
         .contenido-header {
-            @include tablet{
+            @include m.tablet{
                 min-height: 70rem;
             }
         }
@@ -35,8 +38,8 @@
 
     h1 {
         text-align: left;
-        color: $blanco;
-        font-weight: $bold;
+        color: v.$blanco;
+        font-weight: v.$bold;
         line-height: 2;
 
             max-width: 60rem;
