@@ -11,6 +11,6 @@
         <p class="copyright">Todos los derechos reservados yaiv, 20<?php echo date ('y'); ?> &copy;</p>
     </footer>
   
-    <script src="build/js/bundle.min.js"></script>
+    <script src="/build/js/bundle.min.js"></script>
 </body>
 </html>
