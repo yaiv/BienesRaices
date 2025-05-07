@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body>
-    <header class="header <?php echo isset ( $inicio ) ? 'inicio' : ''; ?>"> <!--Se evalua inicio, si esta variable esta como true se agrega el string de inicio y en caso contrario sera un string vacio (operador ternario)
+    <header class="header <?php echo $inicio ? 'inicio' : ''; ?>"> <!--Se evalua inicio, si esta variable esta como true se agrega el string de inicio y en caso contrario sera un string vacio (operador ternario)
         Se hace uso de isset ya que la funcion nos permite revisar si es una variable definida -->
         <div class="contenedor contenido-header">
             <div class="barra">

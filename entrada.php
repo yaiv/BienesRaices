@@ -1,5 +1,8 @@
-<?php include 'includes/templates/header.php';  ?>
-    
+<?php 
+
+require 'includes/funciones.php';
+    incluirTemplate('header');
+?>    
     <main class="contenedor seccion contenido-centrado">
         <h1>¿Por qué invertir en bienes raíces en 2025?</h1>
 
@@ -21,4 +24,6 @@
         </div>
     </main>
 
-    <?php include 'includes/templates/footer.php';  ?>
+    <?php 
+        incluirTemplate('footer');
+    ?>

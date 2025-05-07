@@ -8,7 +8,7 @@
             </nav>
         </div>
 
-        <p class="copyright">Todos los derechos reservados yaiv <?php echo date ('y'); ?> &copy;</p>
+        <p class="copyright">Todos los derechos reservados yaiv, 20<?php echo date ('y'); ?> &copy;</p>
     </footer>
   
     <script src="build/js/bundle.min.js"></script>
