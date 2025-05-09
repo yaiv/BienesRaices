@@ -41,3 +41,6 @@ backend/.cache/
 # Caché de frameworks (Next.js, React, etc.)
 .next/
 out/
+
+#Archivos de configuracion 
+info.php
