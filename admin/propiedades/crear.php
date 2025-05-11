@@ -1,7 +1,7 @@
 <?php 
 
-//Base de datos 
-require '../../includes/config/database.php';
+//Se importa la conexion de la BD 
+require '../../includes/config/database.php'; //Se sale dos veces ya que crear esta dentro de la carpeta de propiedades 
 
 $db = conectarDB();
 
@@ -11,7 +11,7 @@ $resultado = mysqli_query($db, $consulta); //Se toman dos parametros la conexion
 
 //Arreglo con mensajes de errores 
 $errores = [];
-//Se inician vacias para que se le pueda colocar value y no se pierdan los datos 
+//Se inician vacias para que se le pueda colocar value del form y no se pierdan los datos 
 $titulo = '';
 $precio = '';
 $descripcion = '';
@@ -26,7 +26,9 @@ $creado = date('y/m/d');
 //Ejecuta el codigo despues de que el usuario envia el formulario 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    //Asignar files hacia una variable 
+    //Se hace uso de FILES ya que asi se puede mover la imagen a un lugar en el servidor 
+    //Se genero carpeta llamada imagenes 
+    //Pero el nombre (solo el nombre) si se almacena en la BD  
     $imagen = $_FILES['imagen'];
     // echo "<pre>";
     // var_dump($_POST);
@@ -86,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     //validar por tamaño (1000mb maximo)
     //convertir bites a kilobits
-    $medida = 1000 * 1000;
+    $medida = 10000 * 10000;
 
     if($imagen['size'] > $medida ){
         $errores[] = 'La imagen es muy pesada';
@@ -189,7 +191,7 @@ require '../../includes/funciones.php';   //Se modifica ruta para que se cargue
                 <legend>Vendedor</legend>
 
                 <select name="vendedor">
-                <option value="">--Selecione--</option>
+                <option value="">--Selecione--</option> <!--Se trae el resultado de vendedor desde la base de datos -->
                     <?php while($vendedor = mysqli_fetch_assoc($resultado)): ?>
                         <option  <?php echo $vendedores_id === $vendedor['id'] ? 'selected' : '';?>   value="<?php echo $vendedor['id']; ?>"> <?php echo $vendedor['nombre'] . " " . $vendedor ['apellido'];?> </option>
 
