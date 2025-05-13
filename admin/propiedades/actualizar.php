@@ -23,7 +23,7 @@ $db = conectarDB();
 
 $consulta = "SELECT * FROM propiedades WHERE id = {$id}";
 $resultado = mysqli_query($db, $consulta); //Se toman dos parametros la conexion a la BD y la consulta 
-$propiedad = mysqli_fetch_assoc($resultado); //Se asigna resultado haci propiedad 
+$propiedad = mysqli_fetch_assoc($resultado); //Se asigna resultado hacia propiedad 
 // echo "<pre>";
 // var_dump($propiedad); 
 // echo "</pre>";
@@ -124,23 +124,46 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     //revisar que el array de errores este vacio 
     if(empty($errores)){
 
-        // //Subida de archivos (imagenes)
+         // //Subida de archivos (imagenes)
         // //Crear carpeta
-        // $carpetaImagenes = '../../imagenes/';
-        // //Se verifica que exista la carpeta, si no se crea  
-        // if(!is_dir($carpetaImagenes)){
-        // mkdir($carpetaImagenes);
-        // }
 
-        // //Generar nombre de imagen unico 
-        // $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
+        $carpetaImagenes = '../../imagenes/';
+        //Se verifica que exista la carpeta, si no se crea  
+        if(!is_dir($carpetaImagenes)){
+        mkdir($carpetaImagenes);
+        }
+
+
+//Comprobacion en caso de que la imagen no se actualice, lo siguiente hace que no se pierda 
+$nombreImagen = '';
+
+
+        //Se verifica si la imagen ya existe 
+        if($imagen['name']){
+        
+        //eliminar imagen anterior si existe 
+        $rutaImagenAnterior = $carpetaImagenes . $imagenPropiedad;
+        if(file_exists($rutaImagenAnterior)){
+            unlink($rutaImagenAnterior);
+        }
+        //unlink($carpetaImagenes . $imagenPropiedad);
+
+         // //Generar nombre de imagen unico 
+        $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
 
         // //Subir imagen con nombre aleatorio 
-        // move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
 //        exit;
+        }else {
+            $nombreImagen = $propiedad['imagen'];
+        }
+
+
+
+
 
             //Actualizar en la BD 
-    $query = " UPDATE propiedades SET titulo = '{$titulo}', precio = '{$precio}', descripcion = '{$descripcion}', habitaciones = {$habitaciones},
+    $query = " UPDATE propiedades SET titulo = '{$titulo}', precio = '{$precio}', imagen = '{$nombreImagen}', descripcion = '{$descripcion}', habitaciones = {$habitaciones},
     wc = {$wc}, estacionamiento = {$estacionamiento}, vendedores_id = {$vendedores_id} WHERE id={$id}  ";
 
    // echo $query;  //SE DEBE COMPROBAR QUERY YA CON LA BD 
