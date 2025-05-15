@@ -44,3 +44,7 @@ out/
 
 #Archivos de configuracion 
 info.php
+
+#Accesos
+usuario.php
+crear-usuario.php
