@@ -7,9 +7,9 @@ Aplicación web para la gestión y visualización de propiedades inmobiliarias. 
 - ✅ Diseño web responsive y accesible (HTML + SCSS)
 - 🌙 Modo oscuro con JavaScript
 - 📱 Navegación adaptable a dispositivos móviles
-- ##Proximas funcionalidades
-- 🔐 Autenticación de usuarios con PHP (POO)
+- 🔐 Autenticación de usuarios con PHP 
 - 🏘️ CRUD completo para propiedades
+- - ##Proximas funcionalidades
 - 🧑‍💼 CRUD para vendedores
 - 🗂️ Implementación del patrón MVC para mostrar datos dinámicos en frontend
 
@@ -19,21 +19,8 @@ Aplicación web para la gestión y visualización de propiedades inmobiliarias. 
 - HTML5
 - SCSS modular
 - JavaScript (Vanilla)
-
-### Backend
-- PHP 8 (Programación Orientada a Objetos)
-- MySQL (MySQL Workbench)
-- Patrón MVC
-
-## 📦 Instalación y Uso
-Clona el repositorio: https://github.com/yaiv/BienesRaices.git
-Baja las dependencias de json 
-Instala la configuracion de Gulp 
-
-📝 Autor
-Desarrollado por Yair Guerra (yaiv).
-
-
+- PHP
+- MYSQL
 
 ## 📁 Estructura del SCSS
 
@@ -59,5 +46,43 @@ layout/
 
 internas/
   └── nosotros.scss
+```
+
+
+### Backend
+- PHP 8 (Programación Orientada a Objetos)
+- MySQL (MySQL Workbench)
+- Patrón MVC (proximamente)...   
+
+```plaintext
+admin/
+  ├──propiedades/
+    ├── actualizar.php
+    ├── crear
+  └── index.php
+
+PROYECTOBIENESRAICES/
+  ├── anuncio.php
+  ├── anuncios.php
+  ├── base.php
+  ├── blog.php
+  ├── cerrar-sesion.php
+  ├── contacto.php
+  ├── entrada.php
+  ├── index.php
+  └── login.php
+
+````
+
+## 📦 Instalación y Uso
+Clona el repositorio: https://github.com/yaiv/BienesRaices.git  
+Baja las dependencias de json  
+Instala la configuracion de Gulp  
+
+📝 Autor
+Desarrollado por Yair Guerra (yaiv).
+
+
+
 
 
