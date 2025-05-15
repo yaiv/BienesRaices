@@ -29,98 +29,12 @@ require 'includes/funciones.php';
     <section class="seccion contenedor">
         <h2>Casas y Depas en Venta </h2>
 
-        <div class="contenedor-anuncios">
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio1.webp" type="image/webp">
-                    <source srcset="build/img/anuncio1.jpg" type="image/jpeg">
-                    <img src="build/img/anuncio1.jpg" alt="anuncio">
-                </picture>
-                <div class="contenido-anuncio">
-                    <h3>Casa del Lago</h3>
-                    <p>Vivienda elegante con vista al lago, rodeada de naturaleza y con acabados de lujo</p>
-                    <p class="precio">$5,000,000</p>
+        <?php 
+            $limite = 3;
+            include 'includes/templates/anuncios.php';
+        ?>
 
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="Icono WC">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="Icono Estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="Icono Dormitorio">
-                            <p>4</p>
-                        </li>
-                    </ul>
 
-                    <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedad</a>
-                </div> <!--Fin contenido-anuncio-->
-            </div> <!--Fin anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio2.webp" type="image/webp">
-                    <source srcset="build/img/anuncio2.jpg" type="image/jpeg">
-                    <img src="build/img/anuncio2.jpg" alt="anuncio">
-                </picture>
-                <div class="contenido-anuncio">
-                    <h3>Casa de Playa</h3>
-                    <p>Moderna propiedad frente al mar con espacios abiertos, perfecta para vacaciones o como inversión en zona turística.</p>
-                    <p class="precio">$5,000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="Icono WC">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="Icono Estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="Icono Dormitorio">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedad</a>
-                </div> <!--Fin contenido-anuncio-->
-            </div> <!--Fin anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio3.webp" type="image/webp">
-                    <source srcset="build/img/anuncio3.jpg" type="image/jpeg">
-                    <img src="build/img/anuncio3.jpg" alt="anuncio">
-                </picture>
-                <div class="contenido-anuncio">
-                    <h3>Casa con Alberca</h3>
-                    <p>Residencia espaciosa con alberca privada, excelente para el disfrute familiar y reuniones sociales.                    </p>
-                    <p class="precio">$3,000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="Icono WC">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="Icono Estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="Icono Dormitorio">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedad</a>
-                </div> <!--Fin contenido-anuncio-->
-            </div> <!--Fin anuncio-->
-
-        </div> <!--Fin contenedor-anuncios-->
 
         <div class="alinear-derecha">
             <a href="anuncios.php" class="boton-verde">Ver Todas</a>
@@ -166,7 +80,7 @@ require 'includes/funciones.php';
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="./entradasBlog/entrada2.php">
+                    <a href="entrada2.php">
                         <h4>Consejos para comprar tu primera casa</h4>
                         <p class="informacion-meta">Escrito el: <span>04/05/2025</span> por: <span>Yaiv</span></p>
                         <p>Comprar tu primera casa puede parecer abrumador, pero con la preparación adecuada, el proceso puede ser mucho más sencillo.</p>

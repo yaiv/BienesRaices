@@ -1,7 +1,7 @@
 <?php
 
 //conexion con BD
-fuNction conectarDB() : mysqli {
+function conectarDB() : mysqli {
     $db = mysqli_connect('localhost', 'root', 'root', 'bienesraices_crud');
 
     if(!$db){
