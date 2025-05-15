@@ -1,5 +1,12 @@
 <?php 
 
+    require '../includes/funciones.php';   //Se modifica ruta para que se cargue 
+    $auth = estaAutenticado();
+
+    if(!$auth){
+        header('Location: /');
+    }
+
 //Se importa la conexion de la BD 
 require '../includes/config/database.php'; 
 $db = conectarDB();
@@ -44,7 +51,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 //Se incluye un template 
-require '../includes/funciones.php';   //Se modifica ruta para que se cargue 
     incluirTemplate('header');
 ?>    
     <main class="contenedor seccion">

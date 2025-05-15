@@ -1,5 +1,12 @@
 <?php 
 
+    require '../../includes/funciones.php';   //Se modifica ruta para que se cargue 
+    $auth = estaAutenticado();
+
+    if(!$auth){
+        header('Location: /');
+    }
+
 //Se  valida que el valor obtenido de la url sea un numero 
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -183,8 +190,6 @@ $nombreImagen = '';
 
 }
 
-
-require '../../includes/funciones.php';   //Se modifica ruta para que se cargue 
     incluirTemplate('header');
 ?>    
     <main class="contenedor seccion">

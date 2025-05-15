@@ -1,3 +1,13 @@
+<?php
+
+    //Se verifica si ya existe la sesion
+    if(!isset($_SESSION)){
+        //Se trae informacion de la sesion del usuario que se almaceno
+        session_start();
+    }
+    $auth = $_SESSION['login'] ?? false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +36,14 @@
                         <a href="anuncios.php">Anuncios</a>
                         <a href="blog.php">Blog</a>
                         <a href="contacto.php">Contacto</a>
+
+                        <?php if(!$auth): ?>
+                        <a href="login.php">Iniciar Sesión</a>
+                        <?php else:  ?>
+                            <a href="/admin/index.php">Administrar</a>
+                            <a href="cerrar-sesion.php">Cerrar Sesión</a>
+                             
+                        <?php endif; ?>
                     </nav>
                 </div>
                 
