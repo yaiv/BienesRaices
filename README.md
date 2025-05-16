@@ -19,8 +19,7 @@ Aplicación web para la gestión y visualización de propiedades inmobiliarias. 
 - HTML5
 - SCSS modular
 - JavaScript (Vanilla)
-- PHP
-- MYSQL
+
 
 ## 📁 Estructura del SCSS
 
@@ -48,6 +47,10 @@ internas/
   └── nosotros.scss
 ```
 
+## 📸 Vista previa del proyecto
+
+![Vista previa de la página Corona Capital 2025](./cc_github.PNG)
+
 
 ### Backend
 - PHP 8 (Programación Orientada a Objetos)
@@ -74,10 +77,23 @@ PROYECTOBIENESRAICES/
 
 ````
 
+## 📸 Vista previa del proyecto
+
+![Vista previa de la página Corona Capital 2025](./cc_github.PNG)
+
+
+## 📸 Vista previa del proyecto
+
+![Vista previa de la página Corona Capital 2025](./cc_github.PNG)
+
+
 ## 📦 Instalación y Uso
 Clona el repositorio: https://github.com/yaiv/BienesRaices.git  
 Baja las dependencias de json  
 Instala la configuracion de Gulp  
+
+
+
 
 📝 Autor
 Desarrollado por Yair Guerra (yaiv).
