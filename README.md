@@ -47,10 +47,9 @@ internas/
   └── nosotros.scss
 ```
 
-## 📸 Vista previa del proyecto
+## 📸 Vista previa Pagina
 
-![Vista previa de la página Bienes Raices](./cc_github.PNG)
-
+![Página Bienes Raices](./cc.png)
 
 ### Backend
 - PHP 8 (Programación Orientada a Objetos)
@@ -77,14 +76,14 @@ PROYECTOBIENESRAICES/
 
 ````
 
-## 📸 Vista previa del proyecto
+## 📸 Vista previa Propiedades
 
-![Vista previa de la página de Propiedades 2025](./cc1_github.PNG)
+![Página de Propiedades 2025](./cc1.png)
 
 
-## 📸 Vista previa del proyecto
+## 📸 Vista previa Administracion
 
-![Vista previa de la página Administracions 2025](./cc2_github.PNG)
+![Página Administracions 2025](./cc2.png)
 
 
 ## 📦 Instalación y Uso
