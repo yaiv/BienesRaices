@@ -49,7 +49,7 @@ internas/
 
 ## 📸 Vista previa del proyecto
 
-![Vista previa de la página Corona Capital 2025](./cc_github.PNG)
+![Vista previa de la página Bienes Raices](./cc_github.PNG)
 
 
 ### Backend
@@ -79,12 +79,12 @@ PROYECTOBIENESRAICES/
 
 ## 📸 Vista previa del proyecto
 
-![Vista previa de la página Corona Capital 2025](./cc_github.PNG)
+![Vista previa de la página de Propiedades 2025](./cc1_github.PNG)
 
 
 ## 📸 Vista previa del proyecto
 
-![Vista previa de la página Corona Capital 2025](./cc_github.PNG)
+![Vista previa de la página Administracions 2025](./cc2_github.PNG)
 
 
 ## 📦 Instalación y Uso
