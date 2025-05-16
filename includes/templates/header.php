@@ -32,12 +32,12 @@
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="boton dark mode">
                     <nav class="navegacion">
+
+                        <?php if(!$auth): ?>
                         <a href="nosotros.php">Nosotros</a>
                         <a href="anuncios.php">Anuncios</a>
                         <a href="blog.php">Blog</a>
                         <a href="contacto.php">Contacto</a>
-
-                        <?php if(!$auth): ?>
                         <a href="login.php">Iniciar Sesión</a>
                         <?php else:  ?>
                             <a href="/admin/index.php">Administrar</a>
