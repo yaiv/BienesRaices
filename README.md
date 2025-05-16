@@ -90,7 +90,16 @@ PROYECTOBIENESRAICES/
 Clona el repositorio: https://github.com/yaiv/BienesRaices.git  
 Baja las dependencias de json  
 Instala la configuracion de Gulp  
+Importa la base de datos en MySQL:
+  Abre MySQL Workbench o phpMyAdmin  
+  Crea una base de datos llamada bienesraices_crud
+  Importa el archivo database/bienesraices_crud.sql
 
+Configura los datos de conexión en:
+  includes/config/database.php
+
+Inicia el servidor local (con Apache o PHP embebido):
+php -S localhost:3000
 
 
 
