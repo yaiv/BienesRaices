@@ -83,7 +83,7 @@ PROYECTOBIENESRAICES/
 
 ## 📸 Vista previa Administracion
 
-![Página Administracions 2025](./cc2.png)
+![Página Administracion 2025](./cc2.png)
 
 
 ## 📦 Instalación y Uso
