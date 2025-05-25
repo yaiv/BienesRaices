@@ -1,0 +1,17 @@
+{
+    "name": "admin/proyecto-bienes-raices",
+    "description": "Creando proyecto con POO",
+    "type": "project",
+    "authors": [
+        {
+            "name": "yaiv",
+            "email": "yaiv.gm@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./classes"
+        }
+    }
+}

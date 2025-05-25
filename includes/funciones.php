@@ -1,6 +1,11 @@
 <?php
-//Se hace para que el codigo sea portable ya que en caso de no poder cargar va a marcar error
-require 'app.php';
+
+
+
+//Se les colocaca DIR  a los templates para que PHP tome la ubicacion actual del archivo 
+//DIR define la ubicacion y se sepa donde buscar los archivos 
+define('TEMPLATES_URL', __DIR__ . '/templates');
+define('FUNCIONES_URL', __DIR__ . 'funciones.php');
 
 function incluirTemplate ( string $nombre, bool $inicio = false ) {
     include TEMPLATES_URL . "/" . $nombre . ".php";

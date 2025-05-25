@@ -1,6 +1,13 @@
 <?php 
 
-//Se les colocaca DIR  a los templates para que PHP tome la ubicacion actual del archivo 
-//DIR define la ubicacion y se sepa donde buscar los archivos 
-define('TEMPLATES_URL', __DIR__ . '/templates');
-define('FUNCIONES_URL', __DIR__ . 'funciones.php');
+//Archivo principal: es que va a llamar funciones y clases 
+//Usa Autoload para que cada vez que se generen nuevas clases se vayan agregando automaticamente lo mismo ocurre con nuevas funciones, se van agregando y van a estar disponibles en todos los archivos 
+
+require 'funciones.php';
+//Se incluye la conexion a la BD 
+require 'config/database.php';
+require __DIR__ . '/../vendor/autoload.php';
+
+
+use App\Propiedad;
+$propiedad = new Propiedad;

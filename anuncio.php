@@ -8,8 +8,10 @@
         header('Location: /');
     }
 
-    //importar la conexion 
-    require __DIR__ . '/includes/config/database.php';
+    require 'includes/app.php';
+
+    //importar la conexion por medio de app.php
+
     $db = conectarDB();
 
     //realizar consulta
@@ -32,7 +34,7 @@
 
     $propiedad = mysqli_fetch_assoc($resultado);
 
-require 'includes/funciones.php';
+
     incluirTemplate('header');
 ?>
     

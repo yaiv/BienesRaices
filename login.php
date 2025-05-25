@@ -1,6 +1,9 @@
 <?php 
 
-require 'includes/config/database.php';
+//Se incluye el header 
+require 'includes/app.php';
+//Se importa base desde el app.php 
+
     $db = conectarDB();
 
     // Se inicializa arreglo de errores desde el principio
@@ -66,8 +69,7 @@ require 'includes/config/database.php';
     } //SE DEBEN COLOCAR LOS NAMES A LOS INPUT 
 
 
-//Se incluye el header 
-require 'includes/funciones.php';
+
     incluirTemplate('header');
 ?>    
     <main class="contenedor seccion contenido-centrado">
