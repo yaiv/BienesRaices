@@ -48,3 +48,6 @@ info.php
 #Accesos
 usuario.php
 crear-usuario.php
+
+#Composer
+/vendor

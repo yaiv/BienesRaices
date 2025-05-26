@@ -1,21 +1,14 @@
 <?php 
 
-    require '../includes/funciones.php';   //Se modifica ruta para que se cargue 
-    $auth = estaAutenticado();
+    require '../includes/app.php';   //Se modifica ruta para que se cargue 
+    estaAutenticado();
+    use App\Propiedad;
 
-    if(!$auth){
-        header('Location: /');
-    }
+//Se importa la conexion de la BD a traves de app.php
 
-//Se importa la conexion de la BD 
-require '../includes/config/database.php'; 
-$db = conectarDB();
-
-//Se escribe el query 
-$query = "SELECT * FROM propiedades";
-
-//Se consulta la BD 
-$resultadoConsulta =mysqli_query($db, $query); //Se usa mysqli_query para que se tomen conexiones 
+//Implementar un metodo para obtener todas las propiedades utilizando active record
+//Cuando se visita el index.php se manda a llamar la clase y el metodo all
+    $propiedades = Propiedad::all();
 
 //Muestra mensaje condicional
 $resultado = $_GET['resultado'] ?? null; //Se revisa que hay un get si no se muestra nada 
@@ -81,24 +74,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 </thead>
                 <tbody> <!--Se muestran los resultados de la BD-->
                 <!--Se crea codigo que va a iterar en la BD -->
-                <?php while( $propiedad = mysqli_fetch_assoc($resultadoConsulta)): //el while va a permitir generarcontenido para tr  ?> 
+                <?php foreach( $propiedades as $propiedad): ?> 
                     <tr>
-                        <td> <?php echo $propiedad['id']; ?> </td>
-                        <td> <?php echo $propiedad['titulo']; ?> </td>
-                        <td> <img src="/imagenes/<?php echo $propiedad['imagen']; ?>" class="imagen-tabla"> </td>
-                        <td>$ <?php echo $propiedad['precio']; ?> </td>
+                        <td> <?php echo $propiedad->id; ?> </td>
+                        <td> <?php echo $propiedad->titulo; ?> </td>
+                        <td> <img src="/imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla"> </td>
+                        <td>$ <?php echo $propiedad->precio; ?> </td>
                         <td>
                             <form method="POST" class="w-100">
 
-                                <input type="hidden" name="id" value="<?php echo $propiedad['id']; ?>" >
+                                <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>" >
 
                                 <input type="submit" class="boton-rojo-block" value="Eliminar">
                             </form>
-                            <a href="/admin/propiedades/actualizar.php? id=<?php echo $propiedad['id']; ?>" class="boton-amarillo-block ">Actualizar</a>
+                            <a href="/admin/propiedades/actualizar.php? id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block ">Actualizar</a>
                         </td>
                     </tr>
                     
-                    <?php  endwhile; ?>
+                    <?php  endforeach; ?>
 
                 </tbody>
             </table>
