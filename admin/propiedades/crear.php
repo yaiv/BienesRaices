@@ -2,20 +2,17 @@
 
     require '../../includes/app.php';   //Se modifica ruta para que se cargue 
     
-    use App\Propiedad;
+ use App\Propiedad;
+use App\Vendedor;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager as Image;
 
    estaAutenticado();
 
-   //Se importa la conexion de la BD desde app.php
-    $db = conectarDB();
-
     $propiedad = new Propiedad; //Para qie esten limpios las entradas del form
 
-    //Consulta para obtener los vendedores 
-    $consulta = "SELECT * FROM vendedores";
-    $resultado = mysqli_query($db, $consulta); //Se toman dos parametros la conexion a la BD y la consulta 
+    //Consulta para obtener todos los vendedores 
+    $vendedores = Vendedor::all();
 
     //Arreglo con mensajes de errores 
     $errores = Propiedad::getErrores();

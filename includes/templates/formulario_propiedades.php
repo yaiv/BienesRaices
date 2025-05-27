@@ -31,10 +31,19 @@
                 <input type="number" id="estacionamiento" name="propiedad[estacionamiento]" placeholder="Ej: 3" min="1"  max="10" value="<?php echo s($propiedad->estacionamiento);?>">
             </fieldset>
             
+            
+
             <fieldset>
                 <legend>Vendedor</legend>
+                    <label for="vendedor">Vendedor</label>
+                    <select name="propiedad[vendedores_id]" id="vendedor">
+                        <option selected value="">--Seleccione--</option>
 
-                <select name="vendedores_id">
-
-                </select>
+                    <?php foreach($vendedores as $vendedor){ ?>
+                        <option 
+                        <?php echo $propiedad->vendedores_id === $vendedor->id ? 'selected' : ''; ?>
+                        value="<?php echo s($vendedor->id); ?>" ><?php echo s($vendedor->nombre) . " " . s
+                        ($vendedor->apellido); ?> </option>
+                    <?php } ?>
+                    </select>
             </fieldset>

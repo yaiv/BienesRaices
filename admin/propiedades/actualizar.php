@@ -1,6 +1,7 @@
 <?php
 
 use App\Propiedad;
+use App\Vendedor;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager as Image;
 
@@ -19,9 +20,8 @@ if(!$id){
 $propiedad = Propiedad::find($id);
 //debuguear($propiedad);
 
-//Consulta para obtener los vendedores 
-$consulta = "SELECT * FROM vendedores";
-$resultado = mysqli_query($db, $consulta); //Se toman dos parametros la conexion a la BD y la consulta 
+//Consulta para obtener todos los vendedores 
+$vendedores = Vendedor::all();
 
 //Arreglo con mensajes de errores 
 $errores = Propiedad::getErrores();
@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $imagen = $manager->read($_FILES['propiedad']['tmp_name']['imagen'])->cover(800, 600); //Se leer la imagen y se le realiza una transformacion
     $propiedad->setImagen($nombreImagen);
         }
-//En caso de que no haya errores guardar 
+    //En caso de que no haya errores guardar 
     if(empty($errores)){
         //Almacenar la imagen 
         if($imagen){

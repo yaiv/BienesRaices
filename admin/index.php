@@ -3,14 +3,17 @@
     require '../includes/app.php';   //Se modifica ruta para que se cargue 
     estaAutenticado();
     use App\Propiedad;
+    use App\Vendedor;
 
 //Se importa la conexion de la BD a traves de app.php
 
 //Implementar un metodo para obtener todas las propiedades utilizando active record
 //Cuando se visita el index.php se manda a llamar la clase y el metodo all
     $propiedades = Propiedad::all();
+    $vendedores = Vendedor::all();
 
-//Muestra mensaje condicional
+   // debuguear($vendedores);
+    //Muestra mensaje condicional
 $resultado = $_GET['resultado'] ?? null; //Se revisa que hay un get si no se muestra nada 
 
 
