@@ -13,35 +13,42 @@ use Intervention\Image\ImageManager as Image;
 
     $propiedad = new Propiedad; //Para qie esten limpios las entradas del form
 
-//Consulta para obtener los vendedores 
-$consulta = "SELECT * FROM vendedores";
-$resultado = mysqli_query($db, $consulta); //Se toman dos parametros la conexion a la BD y la consulta 
+    //Consulta para obtener los vendedores 
+    $consulta = "SELECT * FROM vendedores";
+    $resultado = mysqli_query($db, $consulta); //Se toman dos parametros la conexion a la BD y la consulta 
 
-//Arreglo con mensajes de errores 
-$errores = Propiedad::getErrores();
+    //Arreglo con mensajes de errores 
+    $errores = Propiedad::getErrores();
 
-//Ejecuta el codigo despues de que el usuario envia el formulario 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    //Ejecuta el codigo despues de que el usuario envia el formulario 
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $propiedad = new Propiedad($_POST);
-   // debuguear($propiedad);
+    //Crea una nueva instancia con los datos enviados 
+    $propiedad = new Propiedad($_POST['propiedad']);
+
+
     //Generar nombre de imagen unico 
     $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
-    if($_FILES['imagen']['tmp_name']){ //Se revisa si existe la imagen 
-        $manager = new Image(Driver::class); //Configuracion Driver
-        $imagen = $manager->read($_FILES['imagen']['tmp_name'])->cover(800, 600); //Se leer la imagen y se le realiza una transformacion
+
+    //Procesar imagen solo si se subio
+    //Satear la imagen
+    //Realizar un resize a la imagen con intervention
+    if($_FILES['propiedad']['tmp_name']['imagen']){ //Se revisa si existe la imagen 
+        //  Asignar nombre del objeto
         $propiedad->setImagen($nombreImagen);
+        //crear imagen usando intervention
+        $manager = new Image(Driver::class); //Configuracion Driver
+        $imagen = $manager->read($_FILES['propiedad']['tmp_name']['imagen'])->cover(800, 600); //Se leer la imagen y se le realiza una transformacion
+        
     }
 
-    $errores = $propiedad->validar();
+        //Validar campos
+     $errores = $propiedad->validar();
+     //debuguear($propiedad);
 
    // debuguear($_FILES);
     
     if(empty($errores)){
-
-
-
-
         //Subida de archivos (imagenes)
         //Se tiene en funciones 
         //Se verifica que exista la carpeta, si no se crea  
@@ -49,22 +56,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         mkdir(CARPETA_IMAGENES);
         }
 
-        //Guardar la imagen en el servidor 
-        //Save pertenece a intervencion image y permite guardar una ubicacion
-        $imagen->save(CARPETA_IMAGENES . $nombreImagen);
-        //Se gurda en la BD 
-        $resultado = $propiedad->guardar();
-        if($resultado){
-       // echo 'Insertado Correctamente';
-       //Se redirecciona al usuario 
-       header("Location: /admin?resultado=1");  //Se paso con query string 
-    }
+                // Guardar imagen en el servidor si fue procesada
+      //  if (isset($imagen)) {
+            $imagen->save(CARPETA_IMAGENES . $nombreImagen);
+     //   }
+
+            //Se gurda en la BD 
+        $propiedad->guardar();
+
+        }
 
     }
 
 
 
-}
+
 
 
     incluirTemplate('header');

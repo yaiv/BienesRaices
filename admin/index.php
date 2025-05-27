@@ -20,26 +20,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
     if($id){
-        //eliminar el archivo 
+        
+        $propiedad = Propiedad::find($id);
 
-        $query = "SELECT imagen FROM propiedades WHERE id = {$id}";
+        $propiedad->eliminar();
 
-        $resultado = mysqli_query ($db, $query);
-        $propiedad = mysqli_fetch_assoc($resultado);
-        //var_dump($propiedad['imagen']); //Nos traemos arreglo pero solo con una imagen que es la seleccionada 
-        unlink('../imagenes/' . $propiedad['imagen']);
-        //relative path//D:\ProyectoBienesRaices\imagenes
-        //exit;
-
-        //eliminar propiedad
-        $query = "DELETE FROM propiedades WHERE id = {$id}";
-
-        //echo $query;
-        $resultado = mysqli_query($db, $query);
-
-        if($resultado){
-            header('location: /admin?resultado=3');
-        }
     }
 }
 
