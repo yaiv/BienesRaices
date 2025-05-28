@@ -176,6 +176,16 @@ class ActiveRecord {
            return $resultado; //YA CON OBJETOS INSTANCIADOS Y MAPEADOS
     }
 
+
+    //Obtiene determinado numero de registros 
+
+        public static function get($cantidad) {
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT " . $cantidad; 
+
+           $resultado = self::consultarSQL($query);  //Se pasa la consulta al metodo de consultarSQL
+           return $resultado; //YA CON OBJETOS INSTANCIADOS Y MAPEADOS
+    }
+
     //Busca un registro por su ID 
     public static function find($id){
         $query = "SELECT * FROM " . static::$tabla . " WHERE id = {$id}";

@@ -53,7 +53,7 @@ use Intervention\Image\ImageManager as Image;
         mkdir(CARPETA_IMAGENES);
         }
 
-                // Guardar imagen en el servidor si fue procesada
+      // Guardar imagen en el servidor si fue procesada
       //  if (isset($imagen)) {
             $imagen->save(CARPETA_IMAGENES . $nombreImagen);
      //   }
